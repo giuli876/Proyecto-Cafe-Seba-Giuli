@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0"
+	/>
+	<title>Mi Cuenta - Caxambu</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/cliente.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==l" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<div class="container-hero">
+		</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container">
+				
+			</nav>
+		</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container">
+				<i class="fa-solid fa-bars"></i>
+				<div class="container-logo">
+					<img src="/img/Caligrafia-caxambu.png" alt="Caligrafia-caxambu" />
+				</div>
+				<ul class="menu">
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="cliente.html">Tienda</a></li>
+					<li><a href="login.html">Mi Cuenta</a></li>
+					<li><a href="soporte.html">Soporte</a></li>
+				</ul>
+				
+			</nav>
+		</div>
+	</header>
+
+	<main class="main-content client-page">
+		<div class="container client-dashboard">
+			<h2 class="heading-1">¡Bienvenido, <span id="clientName">Cliente</span>!</h2>
+			<p class="welcome-message">Aquí puedes gestionar tu cuenta, ver el historial de pedidos y encontrar productos recomendados.</p>
+			<section class="client-section">
+                <h3 class="section-title">Hacer un Nuevo Pedido</h3>
+                <p>Selecciona los productos que deseas añadir a tu carrito.</p>
+
+                <div class="container-products remito-catalogo">
+                    
+                    <div class="card-product" data-product-id="prod-1" data-price="34360">
+                        <div class="container-img">
+                            <img src="/img/cafe-2.png" alt="Caxmbu Brasilero" />
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Caxmbu Brasilero</h3>
+                            <p class="price">
+                                $34.360
+                            </p>
+                            <div class="product-action-group">
+                                <div class="quantity-control">
+                                    <label for="qty-prod-1">Cant:</label>
+                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-1">
+                                </div>
+                                <button class="btn-primary-add-catalogo" data-product-id="prod-1" data-product-name="Caxmbu Brasilero">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-product" data-product-id="prod-2" data-price="42570">
+                        <div class="container-img">
+                            <img src="/img/cafe-2.png" alt="Caxambu Colombiano" />
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Caxambu Colombiano</h3>
+                            <p class="price">
+                                $42.570
+                            </p>
+                            <div class="product-action-group">
+                                <div class="quantity-control">
+                                    <label for="qty-prod-2">Cant:</label>
+                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-2">
+                                </div>
+                                <button class="btn-primary-add-catalogo" data-product-id="prod-2" data-product-name="Caxambu Colombiano">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-product" data-product-id="prod-3" data-price="31300">
+                        <div class="container-img">
+                            <img src="/img/cafe-viena.jpg" alt="Flor de Brasil Doble-Crema" />
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Flor de Brasil Doble-Crema</h3>
+                            <p class="price">
+                                $31.300
+                            </p>
+                            <div class="product-action-group">
+                                <div class="quantity-control">
+                                    <label for="qty-prod-3">Cant:</label>
+                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-3">
+                                </div>
+                                <button class="btn-primary-add-catalogo" data-product-id="prod-3" data-product-name="Flor de Brasil Doble-Crema">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-product" data-product-id="prod-4" data-price="29900">
+                        <div class="container-img">
+                            <img src="/img/cafe-viena.jpg" alt="Flor de Brasil 85/15" />
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Flor de Brasil 85/15</h3>
+                            <p class="price">
+                                $29.900
+                            </p>
+                            <div class="product-action-group">
+                                <div class="quantity-control">
+                                    <label for="qty-prod-4">Cant:</label>
+                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-4">
+                                </div>
+                                <button class="btn-primary-add-catalogo" data-product-id="prod-4" data-product-name="Flor de Brasil 85/15">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-product" data-product-id="prod-5" data-price="15750">
+                        <div class="container-img">
+                            <img src="/img/Caja-Azucar.png" alt="Azucar 800 sobres" />
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Azucar 800 sobres</h3>
+                            <p class="price">
+                                $15.750
+                            </p>
+                            <div class="product-action-group">
+                                <div class="quantity-control">
+                                    <label for="qty-prod-5">Cant:</label>
+                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-5">
+                                </div>
+                                <button class="btn-primary-add-catalogo" data-product-id="prod-5" data-product-name="Azucar 800 sobres">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-product" data-product-id="prod-6" data-price="8600">
+                        <div class="container-img">
+                            <img src="/img/Caja-Edulco.png" alt="Edulco 300 sobre" />
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Edulco 300 sobre</h3>
+                            <p class="price">
+                                $8.600
+                            </p>
+                            <div class="product-action-group">
+                                <div class="quantity-control">
+                                    <label for="qty-prod-6">Cant:</label>
+                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-6">
+                                </div>
+                                <button class="btn-primary-add-catalogo" data-product-id="prod-6" data-product-name="Edulco 300 sobre">
+                                    <i class="fa-solid fa-cart-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section class="client-section remito-section">
+                <h3 class="section-title">Tu Carrito de Compras</h3>
+                <p>Confirma los productos y cantidades antes de finalizar el pedido.</p>
+
+                <div class="remito-generator-card">
+                    
+                    <div class="remito-table-container">
+                        <h4>Detalle de tu Pedido</h4>
+                        <table class="remito-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Producto</th>
+                                    <th>Cant.</th>
+                                    <th>P. Unit.</th>
+                                    <th>Subtotal</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="remitoBody">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="remito-summary">
+                        <p>Total de Productos: <span id="totalItemsDisplay" class="summary-value">0</span></p>
+                        <hr class="divider">
+                        <h4 class="final-total">TOTAL A PAGAR: <span id="finalTotalDisplay" class="summary-value final-price">$0</span></h4>
+                        <button class="btn-primary-finalize" disabled>
+                            <i class="fa-solid fa-file-invoice-dollar"></i> Confirmar Pedido
+                        </button>
+                    </div>
+                </div>
+            </section>	
+			<section class="client-section">
+				<h3 class="section-title">Historial de Pedidos</h3>
+				<ul class="orders-list">
+					<li>
+						<strong>Pedido #12345</strong> - Fecha: 12/09/2024 - <span class="status pending">Pendiente</span>
+					</li>
+					<li>
+						<strong>Pedido #12344</strong> - Fecha: 05/09/2024 - <span class="status completed">Completado</span>
+					</li>
+					</ul>
+				<p id="noOrdersMessage" style="display: none;">Aún no tienes pedidos. ¡Explora nuestros productos!</p>
+			</section>
+
+		</div>
+	</main>
+	
+	<footer class="footer">
+        </footer>
+		<script src="/js/scripts.js"></script>
+		<script src="/js/cliente.js"></script>
+</body>
+</html>
