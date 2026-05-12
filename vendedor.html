@@ -11,29 +11,23 @@
 <body>
     
     <header>
-			<div class="container-hero">
-			</div>
-            <div class="container-user">
-                   
+        <div class="container-hero"></div>
+        <div class="container-user"></div>
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <div class="container-logo">
+                    <img src="img/Caligrafia-caxambu.png" alt="Logo Caxambu" />
                 </div>
-			<div class="container-navbar">
-				<nav class="navbar container">
-                    
-					<i class="fa-solid fa-bars"></i>
-					<div class="container-logo">
-						<img src="/img/Caligrafia-caxambu.png" alt="Caligrafia-caxambu" />
-					</div>
-					<ul class="menu">
-						<li><a href="index.html">Inicio</a></li>
-					    <li><a href="cliente.html">Tienda</a></li>
-					    <li><a href="login.html">Mi Cuenta</a></li>
-                        <li><a href="soporte.html">Soporte</a></li>
-					</ul>
-                    
-					
-				</nav>
-			</div>
-		</header>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cliente.html">Tienda</a></li>
+                    <li><a href="login.html">Mi Cuenta</a></li>
+                    <li><a href="soporte.html">Soporte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main class="main-content vendedor-page">
         <div class="container admin-dashboard">
@@ -58,8 +52,8 @@
                             <td>Caxambu Brasilero</td>
                             <td><input type="number" class="stock" value="50" min="0"></td>
                             <td><input type="number" class="price" value="34360" min="0"></td>
-                            <td><input type="number" class="price" value="27500" min="0"></td>
-                            <td><input type="number" class="price" value="6860" min="0"></td>
+                            <td><input type="number" class="cost-price" value="27500" min="0" disabled></td>
+                            <td><input type="number" class="profit" value="6860" min="0" disabled></td>
                             <td>
                                 <button class="btn-sm add-stock"><i class="fa-solid fa-plus"></i></button>
                                 <button class="btn-sm remove-stock"><i class="fa-solid fa-minus"></i></button>
@@ -70,8 +64,8 @@
                             <td>Caxambu Colombiano</td>
                             <td><input type="number" class="stock" value="25" min="0"></td>
                             <td><input type="number" class="price" value="42570" min="0"></td>
-                            <td><input type="number" class="price" value="31000" min="0"></td>
-                            <td><input type="number" class="price" value="11570" min="0"></td>
+                            <td><input type="number" class="cost-price" value="31000" min="0" disabled></td>
+                            <td><input type="number" class="profit" value="11570" min="0" disabled></td>
                             <td>
                                 <button class="btn-sm add-stock"><i class="fa-solid fa-plus"></i></button>
                                 <button class="btn-sm remove-stock"><i class="fa-solid fa-minus"></i></button>
@@ -82,8 +76,8 @@
                             <td>Flor de Brasil Tostado</td>
                             <td><input type="number" class="stock" value="50" min="0"></td>
                             <td><input type="number" class="price" value="31300" min="0"></td>
-                            <td><input type="number" class="price" value="25300" min="0"></td>
-                            <td><input type="number" class="price" value="6000" min="0"></td>
+                            <td><input type="number" class="cost-price" value="25300" min="0" disabled></td>
+                            <td><input type="number" class="profit" value="6000" min="0" disabled></td>
                             <td>
                                 <button class="btn-sm add-stock"><i class="fa-solid fa-plus"></i></button>
                                 <button class="btn-sm remove-stock"><i class="fa-solid fa-minus"></i></button>
@@ -94,8 +88,8 @@
                             <td>Flor de Brasil 85/15</td> 
                             <td><input type="number" class="stock" value="50" min="0"></td>
                             <td><input type="number" class="price" value="29900" min="0"></td>
-                            <td><input type="number" class="price" value="25300" min="0"></td>
-                            <td><input type="number" class="price" value="4600" min="0"></td>
+                            <td><input type="number" class="cost-price" value="25300" min="0" disabled></td>
+                            <td><input type="number" class="profit" value="4600" min="0" disabled></td>
                             <td>
                                 <button class="btn-sm add-stock"><i class="fa-solid fa-plus"></i></button>
                                 <button class="btn-sm remove-stock"><i class="fa-solid fa-minus"></i></button>
@@ -106,8 +100,8 @@
                             <td>Azucar 800 sobres</td>
                             <td><input type="number" class="stock" value="25" min="0"></td>
                             <td><input type="number" class="price" value="15750" min="0"></td>
-                            <td><input type="number" class="price" value="14000" min="0"></td>
-                            <td><input type="number" class="price" value="1750" min="0"></td>
+                            <td><input type="number" class="cost-price" value="14000" min="0" disabled></td>
+                            <td><input type="number" class="profit" value="1750" min="0" disabled></td>
                             <td>
                                 <button class="btn-sm add-stock"><i class="fa-solid fa-plus"></i></button>
                                 <button class="btn-sm remove-stock"><i class="fa-solid fa-minus"></i></button>
@@ -118,8 +112,8 @@
                             <td>Edulco 300 sobres</td>
                             <td><input type="number" class="stock" value="50" min="0"></td>
                             <td><input type="number" class="price" value="8600" min="0"></td>
-                            <td><input type="number" class="price" value="7000" min="0"></td>
-                            <td><input type="number" class="price" value="1600" min="0"></td>
+                            <td><input type="number" class="cost-price" value="7000" min="0" disabled></td>
+                            <td><input type="number" class="profit" value="1600" min="0" disabled></td>
                             <td>
                                 <button class="btn-sm add-stock"><i class="fa-solid fa-plus"></i></button>
                                 <button class="btn-sm remove-stock"><i class="fa-solid fa-minus"></i></button>
@@ -129,184 +123,26 @@
                     </tbody>
                 </table>
             </section>
+
             <section class="admin-section">
                 <h3>Pedidos de Clientes</h3>
+                
                 <div class="order-list">
-                    <div class="order-card" id="order-12345">
-                        <h4>Pedido #0</h4>
-                        <p>Cliente: Juan Pérez</p>
-                        <p>Estado: <span style="font-weight: bold; color: orange;">Pendiente</span></p>
-                        
-                        <div class="order-details-summary">
-                            <h5>Detalle del Pedido</h5>
-                            <table class="order-summary-table">
-                                <thead>
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Cant.</th>
-                                        <th>P. Venta Unit.</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Caxambu Brasilero</td>
-                                        <td>6</td>
-                                        <td>$34.360</td>
-                                        <td>$206.160</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caxambu Colombiano</td>
-                                        <td>2</td>
-                                        <td>$42.570</td>
-                                        <td>$85.140</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="summary-totals">
-                                <p>Total Productos: <span style="font-weight: bold;">$291.300</span></p>
-                                <hr class="divider">
-                                <p class="ganancia">Ganancia Estimada: <span style="font-weight: bold; color: var(--success-color);">$70.000</span></p>
-                            </div>
-                        </div>
-                        <div class="order-total">
-                            <h4>Total (Cliente Paga): <strong style="color: var(--dark-color);">$291.300</strong></h4>
-                        </div>
-                        
-                        <div class="order-actions">
-                            <button class="btn-approve"><i class="fa-solid fa-check"></i> Aprobar</button>
-                            <button class="btn-deny"><i class="fa-solid fa-xmark"></i> Rechazar</button>
-                        </div>
                     </div>
 
-                    <div class="order-card" id="order-12346">
-                        <h4>Pedido #1</h4>
-                        <p>Cliente: María López</p>
-                        <p>Estado: <span style="font-weight: bold; color: orange;">Pendiente</span></p>
-                        
-                        <div class="order-details-summary">
-                            <h5>Detalle del Pedido</h5>
-                            <table class="order-summary-table">
-                                <thead>
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Cant.</th>
-                                        <th>P. Venta Unit.</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Flor de Brasil Tostado</td>
-                                        <td>2</td>
-                                        <td>$31.300</td>
-                                        <td>$62.600</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Edulco 300 sobres</td>
-                                        <td>2</td>
-                                        <td>$8.700</td>
-                                        <td>$17.400</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="summary-totals">
-                                <p>Total Productos: <span style="font-weight: bold;">$80.000</span></p>
-                                <hr class="divider">
-                                <p class="ganancia">Ganancia Estimada: <span style="font-weight: bold; color: var(--success-color);">$18.000</span></p>
-                            </div>
-                        </div>
-                        <div class="order-total">
-                            <h4>Total (Cliente Paga): <strong style="color: var(--dark-color);">$80.000</strong></h4>
-                        </div>
-                        <div class="order-actions">
-                            <button class="btn-approve"><i class="fa-solid fa-check"></i> Aprobar</button>
-                            <button class="btn-deny"><i class="fa-solid fa-xmark"></i> Rechazar</button>
-                        </div>
-                    </div>
-                </div>
             </section>
         </div>
     </main>
 
     <footer class="container-footer">
-			<div class="container footer">
-				<div class="contact">
-					<p class="title-footer">Información de Contacto</p>
-					<ul>
-						<li>
-							Dirección: 05, Calle Principal, Mendoza, 5570,
-							Argentina
-						</li>
-						<li>Número de teléfono: 2634362734</li>
-						<li>
-							Correo electrónico:
-							caxambu@baristas.com
-						</li>
-					</ul>
-					<div class="social-icons">
-						<span class="facebook">
-							<i class="fa-brands fa-facebook-f"></i>
-						</span>
-						<span class="twitter">
-							<i class="fa-brands fa-twitter"></i>
-						</span>
-						<span class="youtube">
-							<i class="fa-brands fa-youtube"></i>
-						</span>
-						<span class="pinterest">
-							<i class="fa-brands fa-pinterest-p"></i>
-						</span>
-						<span class="instagram">
-							<i class="fa-brands fa-instagram"></i>
-						</span>
-					</div>
-				</div>
+        <div class="container footer">
+            <div class="copyright">
+                <p>Desarrollado por Programación nefasta &copy; 2026</p>
+                <img src="img/payment.png" alt="Pagos" />
+            </div>
+        </div>
+    </footer>
 
-				<div class="information">
-					<p class="title-footer">Información</p>
-					<ul>
-						<li><a href="#">Acerca de Nosotros</a></li>
-						<li><a href="#">Información Delivery</a></li>
-						<li><a href="#">Politicas de Privacidad</a></li>
-						<li><a href="#">Términos y condiciones</a></li>
-						<li><a href="#">Contactános</a></li>
-					</ul>
-				</div>
-
-				<div class="my-account">
-					<p class="title-footer">Mi cuenta</p>
-					<ul>
-						<li><a href="#">Mi cuenta</a></li>
-
-						<li><a href="#">Historial de ordenes</a></li> 
-
-						<li><a href="#">Lista de deseos</a></li>
-						<li><a href="#">Boletín</a></li>
-					</ul>
-				</div>
-
-				<div class="newsletter">
-					<p class="title-footer">Boletín informativo</p>
-
-					<div class="content">
-						<p>
-							Suscríbete a nuestros boletines ahora y mantente al
-							día con nuevas colecciones y ofertas exclusivas.
-						</p>
-						<input type="email" placeholder="Ingresa el correo aquí...">
-						<button>Suscríbete</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="copyright">
-				<p>
-					Desarrollado por Programación nefasta &copy; 2024
-				</p>
-				<img src="img/payment.png" alt="Pagos" />
-			</div>
-		</footer>
-    <script src="vendedor.js"></script>
+    <script src="/js/vendedor.js"></script>
 </body>
 </html>

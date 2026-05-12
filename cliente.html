@@ -27,7 +27,7 @@
 			<nav class="navbar container">
 				<i class="fa-solid fa-bars"></i>
 				<div class="container-logo">
-					<img src="/img/Caligrafia-caxambu.png" alt="Caligrafia-caxambu" />
+					<img src="img/Caligrafia-caxambu.png" alt="Logo Caxambu" />
 				</div>
 				<ul class="menu">
 					<li><a href="index.html">Inicio</a></li>
@@ -215,22 +215,106 @@
             </section>	
 			<section class="client-section">
 				<h3 class="section-title">Historial de Pedidos</h3>
-				<ul class="orders-list">
-					<li>
-						<strong>Pedido #12345</strong> - Fecha: 12/09/2024 - <span class="status pending">Pendiente</span>
-					</li>
-					<li>
-						<strong>Pedido #12344</strong> - Fecha: 05/09/2024 - <span class="status completed">Completado</span>
-					</li>
-					</ul>
-				<p id="noOrdersMessage" style="display: none;">Aún no tienes pedidos. ¡Explora nuestros productos!</p>
-			</section>
+				<ul class="orders-list" id="listaHistorial">
+    </ul>
+<p id="noOrdersMessage" style="display: none;">Aún no tienes pedidos. ¡Explora nuestros productos!</p>
 
 		</div>
 	</main>
 	
-	<footer class="footer">
-        </footer>
+<footer class="container-footer">
+			<div class="container footer">
+				<div class="contact">
+					<p class="title-footer">Información de Contacto</p>
+					<ul>
+						<li>
+							Dirección: 05, Calle Principal, Mendoza, 5570,
+							Argentina
+						</li>
+						<li>Número de teléfono: 2634362734</li>
+						<li>
+							Correo electrónico:
+							caxambu@baristas.com
+						</li>
+					</ul>
+					<div class="social-icons">
+						<span class="facebook">
+							<i class="fa-brands fa-facebook-f"></i>
+						</span>
+						<span class="twitter">
+							<i class="fa-brands fa-twitter"></i>
+						</span>
+						<span class="youtube">
+							<i class="fa-brands fa-youtube"></i>
+						</span>
+						<span class="pinterest">
+							<i class="fa-brands fa-pinterest-p"></i>
+						</span>
+						<span class="instagram">
+							<i class="fa-brands fa-instagram"></i>
+						</span>
+					</div>
+				</div>
+
+				<div class="information">
+					<p class="title-footer">Información</p>
+					<ul>
+						<li><a href="#">Acerca de Nosotros</a></li>
+						<li><a href="#">Información Delivery</a></li>
+						<li><a href="#">Politicas de Privacidad</a></li>
+						<li><a href="#">Términos y condiciones</a></li>
+						<li><a href="#">Contactános</a></li>
+					</ul>
+				</div>
+
+				<div class="my-account">
+					<p class="title-footer">Mi cuenta</p>
+					<ul>
+						<li><a href="#">Mi cuenta</a></li>
+
+						<li><a href="#">Historial de ordenes</a></li> 
+
+						<li><a href="#">Lista de deseos</a></li>
+						<li><a href="#">Boletín</a></li>
+					</ul>
+				</div>
+
+				<div class="newsletter">
+					<p class="title-footer">Boletín informativo</p>
+
+					<div class="content">
+						<p>
+							Suscríbete a nuestros boletines ahora y mantente al
+							día con nuevas colecciones y ofertas exclusivas.
+						</p>
+						<input type="email" placeholder="Ingresa el correo aquí...">
+						<button>Suscríbete</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright">
+				<p>
+					Desarrollado por Programación nefasta &copy; 2024
+				</p>
+				<img src="img/payment.png" alt="Pagos" />
+			</div>
+</footer>
+
+<div id="modalDetallePedido" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitulo">Pedido #00000</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body" id="modalCuerpo">
+                </div>
+            <div class="modal-footer">
+                <button class="btn-close-modal">Cerrar</button>
+            </div>
+        </div>
+</div>
+
 		<script src="/js/scripts.js"></script>
 		<script src="/js/cliente.js"></script>
 </body>
