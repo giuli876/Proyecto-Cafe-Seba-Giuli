@@ -76,3 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.addEventListener('submit', handleLogin);
     }
 });
+import { supabase } from './supabase.js';
+
+async function probarConexion() {
+    console.log("1. Llamando a la bodega de Supabase...");
+    
+    // Le pedimos a Supabase el estado de la sesión
+    const { data, error } = await supabase.auth.getSession();
+
+    if (error) {
+        console.error("❌ Hubo un error al conectar:", error.message);
+    } else {
+        console.log("✅ ¡Conexión súper exitosa! Supabase respondió:", data);
+    }
+}
+
+// Ejecutamos la prueba
+probarConexion();
