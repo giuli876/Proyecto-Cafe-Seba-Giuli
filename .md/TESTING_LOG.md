@@ -32,6 +32,11 @@ Este documento sirve para rastrear la estabilidad del sistema paso a paso.
     - *Prueba:* Dar clic muchas veces al botón "Entrar" mientras carga.
     - *Prueba:* Dejar campos vacíos y dar enter (el `required` de HTML debería frenarlo).
     - *Estado:* **PENDIENTE**
+- [ ] **Redirección de Navbar según Rol (Error detectado):**
+    - *Prueba:* Clic en "Tienda" en el menú superior estando logueado como Vendedor.
+    - *Error encontrado:* El sistema envía a `cliente.html` en lugar de `vendedor.html`.
+    - *Causa probable:* El nuevo header unificado tiene un enlace estático (`href="cliente.html"`) y no está leyendo el rol del usuario.
+    - *Estado:* **PENDIENTE DE SOLUCIÓN**
 
 ---
 *Notas: Si encuentras un error nuevo, agrégalo aquí con el formato: [ERROR] -> [SOLUCIÓN].*
