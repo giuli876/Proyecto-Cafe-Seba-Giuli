@@ -640,3 +640,103 @@ body {
 .copyright img {
     height: 3rem; 
 }
+
+/* --- Carrito en el Header --- */
+.nav-cart a {
+    position: relative;
+    font-size: 1.8rem;
+}
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 1rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* --- Menú Desplegable del Usuario --- */
+.user-menu-container {
+    position: relative;
+}
+
+.user-avatar-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.user-avatar-btn .arrow-down {
+    font-size: 1.2rem;
+}
+
+.dropdown-menu {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 220px;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.dropdown-menu.active {
+    display: flex; /* Se muestra cuando tiene la clase active */
+}
+
+.dropdown-header {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-title {
+    color: var(--dark-color);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.drop-subtitle {
+    color: var(--light-color);
+    font-size: 1.2rem;
+}
+
+.dropdown-menu a {
+    color: #444 !important;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-menu a::after {
+    display: none; /* Quitamos la rayita blanca del hover del header */
+}
+
+.dropdown-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+
+.text-danger {
+    color: var(--danger-color) !important;
+}

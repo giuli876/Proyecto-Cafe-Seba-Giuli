@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 2. ¡LO NUEVO! Buscar el rol en la tabla 'perfiles'
         const { data: perfilData, error: perfilError } = await supabase
             .from('perfiles')
             .select('rol, nombre_completo')
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
 
-       // 3. Redirigir según el rol (limpiando espacios, mayúsculas Y comillas accidentales)
         const rolLimpio = perfilData.rol.trim().toLowerCase().replace(/['"]+/g, '');
         
         console.log("Rol detectado y limpio:", rolLimpio);
@@ -52,10 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('userRol', rolLimpio);
 
         if (rolLimpio === 'vendedor') {
-            alert(`¡Hola ${perfilData.nombre_completo}! Entrando al panel de vendedor.`);
             window.location.href = 'vendedor.html';
         } else {
-            alert(`¡Hola ${perfilData.nombre_completo}! Entrando a la tienda.`);
             window.location.href = 'cliente.html';
         }
     };
