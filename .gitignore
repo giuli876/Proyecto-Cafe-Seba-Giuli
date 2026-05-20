@@ -1,0 +1,18 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de dependencias (MUY IMPORTANTE si usan Node.js o librerías)
+node_modules/
+dist/
+
+# Configuraciones locales de VS Code
+.vscode/
+
+# Archivos de configuración de Firebase (si los llegan a usar)
+.firebase/
+fireba-debug.log
+
+# Archivos con claves sensibles (¡Esto es clave por seguridad!)
+.env
+config.json

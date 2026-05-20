@@ -1,104 +1,111 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ======================================================================
-    // 1. UTILIDADES GLOBALES DE SESIÓN
-    // ======================================================================
-
-    /**
-     * Simula el estado de la sesión.
-     * @returns {boolean} True si el usuario 'Cliente' está logeado (simulación con localStorage).
-     */
+    // ==========================================
+    // 1. VERIFICAR SI ESTÁ LOGEADO (TRUE o FALSE)
+    // ==========================================
     const isUserLoggedIn = () => {
-        // En un proyecto real, esto validaría un token o una cookie.
-        return localStorage.getItem('userType') === 'Cliente';
+        return localStorage.getItem('userName') !== null;
     };
 
-    /**
-     * Redirige al usuario si no está logeado y trata de acceder a una página restringida.
-     * @param {string} restrictedPage El nombre de la página que está visitando (ej: 'cliente.html').
-     * @param {string} loginPage La página a la que debe ir si no está logeado (ej: 'login.html').
-     */
-    const checkLoginRedirection = (restrictedPage, loginPage = 'login.html') => {
-        // Ejecuta la redirección solo si estamos en la página restringida y no está logeado.
-        const currentPage = window.location.pathname.split('/').pop();
-        if (currentPage === restrictedPage && !isUserLoggedIn()) {
-            // alert("Debes iniciar sesión para acceder a esta página."); // Opcional
-            window.location.replace(loginPage);
-        }
-    };
+    // ==========================================
+    // 2. LÓGICA DE LA BARRA DE NAVEGACIÓN
+    // ==========================================
+    const navLogin = document.getElementById('nav-login');
+    const navUser = document.getElementById('nav-user');
+    const navCart = document.getElementById('nav-cart');
+    const navUserName = document.getElementById('nav-user-name');
+    const dropName = document.getElementById('drop-name');
+    const dropEmail = document.getElementById('drop-email');
 
-    // ======================================================================
-    // 2. LÓGICA DE NAVEGACIÓN Y EVENTOS DE MENÚ
-    // ======================================================================
-
-    // A) Enlaces principales del menú (Home, Tienda, Mi Cuenta, Soporte)
-    const menuLinks = document.querySelectorAll('.menu a');
-    
-    menuLinks.forEach(link => {
-        const linkText = link.textContent.trim();
+    if (isUserLoggedIn()) {
+        if (navLogin) navLogin.style.display = 'none'; 
         
-        // 1. Eliminar el comportamiento por defecto para manejar la lógica de login
-        if (linkText === 'Tienda' || linkText === 'Mi Cuenta') {
+        if (navUser) {
+            navUser.style.display = 'block'; 
             
-            // Asignar el listener para la redirección controlada
-            link.addEventListener('click', (event) => {
-                event.preventDefault(); 
-                
-                if (isUserLoggedIn()) {
-                    // Logeado: Tienda o Mi Cuenta van al dashboard de cliente
-                    window.location.href = 'cliente.html';
-                } else {
-                    // No Logeado: Va a iniciar sesión
-                    window.location.href = 'login.html';
-                }
-            });
+            const nombreCompleto = localStorage.getItem('userName');
+            const primerNombre = nombreCompleto ? nombreCompleto.split(' ')[0] : 'Usuario';
+            const userEmail = localStorage.getItem('userEmail');
             
-            // Reemplazamos el 'href' para que sea más claro que el JS lo maneja
-            link.href = '#'; 
-        } 
-        // 2. Enlaces sin restricción (sólo asegurar su href)
-        else if (linkText === 'Inicio') {
-            link.href = 'index.html';
-        } else if (linkText === 'Soporte') {
-            link.href = 'soporte.html';
-        }
-    });
+            if (navUserName) navUserName.textContent = primerNombre;
+            if (dropName) dropName.textContent = `Hola, ${primerNombre}`;
+            if (dropEmail && userEmail) dropEmail.textContent = userEmail;
 
-    // B) Logo Caxambu
-    const logoContainer = document.querySelector('.container-logo');
-    if (logoContainer) {
-        logoContainer.style.cursor = 'pointer'; 
-        logoContainer.addEventListener('click', () => {
+            const clientNameElement = document.getElementById('clientName');
+            if (clientNameElement) clientNameElement.textContent = primerNombre;
+        }
+        
+        if (navCart && localStorage.getItem('userRol') === 'cliente') {
+            navCart.style.display = 'block';
+        }
+
+    } else {
+        // --- LOGIN = FALSE ---
+        if (navLogin) navLogin.style.display = 'block'; 
+        if (navUser) navUser.style.display = 'none';    
+        if (navCart) navCart.style.display = 'none';    
+    }
+
+    // ==========================================
+    // 3. FUNCIONAMIENTO DEL MENÚ DESPLEGABLE
+    // ==========================================
+    const avatarBtn = document.getElementById('avatar-btn');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    if (avatarBtn && dropdownMenu) {
+        avatarBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            dropdownMenu.classList.toggle('active'); 
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!dropdownMenu.contains(e.target) && !avatarBtn.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // ==========================================
+    // 4. CERRAR SESIÓN (LOGOUT)
+    // ==========================================
+    const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
+    if (btnCerrarSesion) {
+        btnCerrarSesion.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userRol');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userType'); 
+            
             window.location.href = 'index.html';
         });
     }
 
-    // ======================================================================
-    // 3. OTRAS FUNCIONES GLOBALES (Modo Oscuro, Nombre de Cliente)
-    // ======================================================================
-
-    // Muestra el nombre del cliente en el dashboard si está logeado
-    const clientNameElement = document.getElementById('clientName');
-    if (clientNameElement) {
-        if (isUserLoggedIn()) {
-            // Aquí deberías cargar el nombre real de la sesión, no solo 'Cliente'
-            clientNameElement.textContent = localStorage.getItem('userName') || 'Cliente';
-        } else {
-            // Si el script se carga en una página sin login, mostrar "Invitado"
-            clientNameElement.textContent = 'Invitado';
-        }
+    const logoContainer = document.querySelector('.container-logo');
+    if (logoContainer) {
+        logoContainer.style.cursor = 'pointer'; 
+        logoContainer.addEventListener('click', () => {
+            window.location.href = 'index.html';    
+        });
     }
-    
-    // Función de Modo Oscuro (se implementará cuando lo solicites)
-    const toggleDarkMode = () => {
-        // Lógica futura para cambiar la clase 'dark-mode' en el body.
-    };
-    
-    // ======================================================================
-    // 4. INICIO DE VERIFICACIONES
-    // ======================================================================
 
-    // Ejecutar la verificación de login al cargar la página. 
-    // Si estás en cliente.html y no estás logeado, te envía a login.html.
-    checkLoginRedirection('cliente.html');
+    // Protección de rutas: si no está logeado y quiere entrar a cliente.html, lo manda al login
+    const paginaActual = window.location.pathname.split('/').pop();
+    const userRole = localStorage.getItem('userRol');
+
+    if (['cliente.html', 'perfil.html', 'vendedor.html'].includes(paginaActual) && !isUserLoggedIn()) {
+        window.location.replace('login.html');
+        return;
+    }
+
+    if (paginaActual === 'cliente.html' && userRole === 'vendedor') {
+        window.location.replace('vendedor.html');
+        return;
+    }
+
+    if (paginaActual === 'vendedor.html' && userRole !== 'vendedor') {
+        window.location.replace('cliente.html');
+        return;
+    }
 });

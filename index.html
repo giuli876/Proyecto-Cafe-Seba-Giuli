@@ -1,282 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Baristas</title>
-		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="css/index.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	</head>
-	<body>
-		<header>
-			<div class="container-navbar">
-				<nav class="navbar container">
-					<div class="container-logo">
-						<img src="img/Caligrafia-caxambu.png" alt="Logo Caxambu" />
-					</div>
-					<ul class="menu">
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="cliente.html">Tienda</a></li>
-						<li><a href="login.html">Mi Cuenta</a></li>
-                        <li><a href="soporte.html">Soporte</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baristas</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container-navbar">
+        <nav class="navbar container">
+          <div class="container-logo">
+            <img src="img/Caligrafia-caxambu.png" alt="Logo Caxambu" />
+          </div>
 
-		<main class="main-content">
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cliente.html">Tienda</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
 
-			<section class="banner">
-				<div class="content-banner"><p>Café recién tostado</p>
-					<h2>
-						Colección de la <br />
-						semana del <span>2026</span>
-					</h2>
-				</div>
-			</section>
+            <li id="nav-cart" style="display: none">
+              <a href="#" id="cart-icon"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span></a
+              >
+            </li>
 
-			<section class="container">
-				<div class="container-features">
-					<div class="card-feature">
-						<i class="fa-solid fa-plane-up"></i>
-						<div class="feature-content">
-							<span>Envío gratuito a nivel mundial</span>
-							<p>En pedidos superiores a $1500</p>
-						</div>
-					</div>
-					<div class="card-feature">
-						<i class="fa-solid fa-wallet"></i>
-						<div class="feature-content">
-							<span>Garantía de devolución de dinero</span>
-							<p>70% de garantía de devolución</p>
-						</div>
-					</div>
-					<div class="card-feature">
-						<i class="fa-solid fa-gift"></i>
-						<div class="feature-content">
-							<span>Tarjeta de regalo especial</span>
-							<p>Ofrece vales de regalo especiales</p>
-						</div>
-					</div>
-					<div class="card-feature">
-						<i class="fa-solid fa-headset"></i>
-						<div class="feature-content">
-							<span>Servicio al cliente las 24 horas</span>
-							<p>Acceso a un soporte amigable</p>
-						</div>
-					</div>
-				</div>
-			</section>
+            <li id="nav-login">
+              <a href="login.html"
+                ><i class="fa-regular fa-user"></i> Acceder</a
+              >
+            </li>
 
-			
-			<section class="container top-products">
-				<h1 class="heading-1">Los Mejores Productos</h1>
-				<div class="container-products">
-					<div class="card-product">
-						<div class="container-img">
-							<img src="/img/cafe-1.png" alt="cafe-1" />
-							<span class="discount">-13%</span>
-						</div>
-						<div class="content-card-product">
-							<h3>Café Colombiano</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$42.370 <span>$47.000</span></p>
-						</div>
-					</div>
+            <li id="nav-user" class="user-menu-container" style="display: none">
+              <div class="user-avatar-btn" id="avatar-btn">
+                <i class="fa-regular fa-user"></i>
+                <span id="nav-user-name">Mi Cuenta</span>
+                <i class="fa-solid fa-chevron-down arrow-down"></i>
+              </div>
 
-					<div class="card-product">
-						<div class="container-img">
-							<img src="/img/cafe-2.png" alt="cafe-2" />
-							<span class="discount">-22%</span>
-						</div>
-						<div class="content-card-product">
-							<h3>Café Brasilero</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$34.360 <span>$39.500</span></p>
-						</div>
-					</div>
-					<div class="card-product">
-						<div class="container-img">
-							<img src="img/Caja-Azucar.png" alt="Caja-Azucar" />
-							<span class="discount">-17%</span>
-						</div>
-						<div class="content-card-product">
-							<h3>Azucar 800 sobres</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$4.500 <span>$5.400</span></p>
-						</div>
-					</div>
+              <ul class="dropdown-menu" id="dropdown-menu">
+                <li class="dropdown-header">
+                  <span id="drop-name" class="drop-title">Hola, Cliente</span>
+                  <span id="drop-email" class="drop-subtitle"
+                    >cliente@email.com</span
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a href="perfil.html"
+                    ><i class="fa-regular fa-user"></i> Mi Perfil</a
+                  >
+                </li>
+                <li>
+                  <a href="cliente.html"
+                    ><i class="fa-solid fa-bag-shopping"></i> Mis Compras</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fa-regular fa-heart"></i> Favoritos</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a href="#" id="btn-cerrar-sesion" class="text-danger"
+                    ><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar
+                    Sesión</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-					<div class="card-product">
-						<div class="container-img">
-							<img src="/img/Cafe-Blend.png" alt="Cafe-Blend" />
-							<span class="discount">-20%</span>
-						</div>
-						<div class="content-card-product">
-							<h3>Café Blend</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$38.000 <span>$40.000</span></p>
-						</div>
-					</div>
-					<div class="card-product">
-						<div class="container-img">
-							<img src="/img/Cafe-moka-Brasil.png" alt="Cafe-moka-Brasil" />
-							<span class="discount">-30%</span>
-						</div>
-						<div class="content-card-product">
-							<h3>Café Moka Molido</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$38.000 <span>$40.000</span></p>
-						</div>
-					</div>
-					
-					<div class="card-product">
-						<div class="container-img">
-							<img src="img/Caja-Edulco.png" alt="Caja-Edulco" />
-							<span class="discount">-10%</span>
-						</div>
-						<div class="content-card-product">
-							<h3>Edulco 300 sobres</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$4.050 <span>$4.500</span></p>
-						</div>
-					</div>
-				</div>
-			</section>
+    <main class="main-content">
+      <section class="banner">
+        <div class="content-banner">
+          <p>Café recién tostado</p>
+          <h2>
+            Colección de la <br />
+            semana del <span>2026</span>
+          </h2>
+        </div>
+      </section>
 
-			<section class="container blogs">
-				<h1 class="heading-1">Últimos Blogs</h1>
+      <section class="container">
+        <div class="container-features">
+          <div class="card-feature">
+            
+            <div class="feature-content">
+              <span>Café de Origen seleccionado.</span>
+              <p>Trabajamos directamente con productores para llevarte el mejor grano.</p>
+            </div>
+          </div>
+          <div class="card-feature">
+            
+            <div class="feature-content">
+              <span>Calidad Garantizada.</span>
+              <p>Si el café no cumple tus expectativas, te lo cambiamos sin vueltas.</p>
+            </div>
+          </div>
+          <div class="card-feature">
+            
+            <div class="feature-content">
+              <span>Atención personalizada.</span>
+              <p>Consultanos por WhatsApp y armamos tu pedido a medida.</p>
+            </div>
+          </div>
+          <div class="card-feature">
+            
+            <div class="feature-content">
+              <span>Frescura Asegurada.</span>
+              <p>Tostamos semanalmente para que el aroma llegue intacto a tu taza.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				<div class="container-blogs">
-					<div class="card-blog">
-						<div class="container-img-blog">
-							<img src="img/blog-1.jpg" alt="Imagen Blog 1" />
-						</div>
-						<div class="content-blog">
-							<h3>Blog 1</h3>
-							<p>Veni a festejar a **** la nueva sucursal de CaxambuLa nueva sucursal esta ubicada en *** sobre ***.</p>
-							<a href="#" class="btn-read-more">Leer más</a>
-						</div>
-					</div>
+      <section class="container top-products">
+        <h1 class="heading-1">Los Mejores Productos</h1>
+        <div class="container-products" id="catalogo-index">
+            <p style="text-align:center; width:100%; grid-column: 1/-1;">Cargando nuestros mejores productos...</p>
+        </div>
+      </section>
 
-					<div class="card-blog">
-						<div class="container-img-blog">
-							<img src="img/blog-2.jpg" alt="Imagen Blog 2" />
-						</div>
-						<div class="content-blog">
-							<h3>Blog 2</h3>
-							<p>***** empieza a vender nuestros productos y estamos muy felices asi que hacemos esto... </p>
-							<a href="#" class="btn-read-more">Leer más</a>
-						</div>
-					</div>
+      <section class="container blogs">
+        <h1 class="heading-1">Últimos Blogs</h1>
 
-					<div class="card-blog">
-						<div class="container-img-blog">
-							<img src="img/blog-3.jpg" alt="Imagen Blog 3" />
-						</div>
-						<div class="content-blog">
-							<h3>Blog 3</h3>
-							<p>Hoy 1/10/2026 es el día internacional del café. Un día para celebrar nuestra bebida favorita en nuestra sucursales.</p>
-							<a href="#" class="btn-read-more">Leer más</a>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
+        <div class="container-blogs">
+          <div class="card-blog">
+            <div class="container-img-blog">
+              <img src="img/blog-1.jpg" alt="Imagen Blog 1" />
+            </div>
+            <div class="content-blog">
+              <h3>Como preparar el cafe perfecto en casa.</h3>
+              <p>
+                Tips para usar la cafetera italiana, prensa francesa, etc.
+              </p>
+              <a href="#" class="btn-read-more">Leer más</a>
+            </div>
+          </div>
 
-		<footer class="container-footer">
-			<div class="container footer">
-				<div class="contact">
-					<p class="title-footer">Información de Contacto</p>
-					<ul>
-						<li>
-							Dirección: 05, Calle Principal, Mendoza, 5570,
-							Argentina
-						</li>
-						<li>Número de teléfono: 2634362734</li>
-						<li>
-							Correo electrónico:
-							caxambu@baristas.com
-						</li>
-					</ul>
-					<div class="social-icons">
-						<span class="facebook">
-							<i class="fa-brands fa-facebook-f"></i>
-						</span>
-						<span class="twitter">
-							<i class="fa-brands fa-twitter"></i>
-						</span>
-						<span class="youtube">
-							<i class="fa-brands fa-youtube"></i>
-						</span>
-						<span class="pinterest">
-							<i class="fa-brands fa-pinterest-p"></i>
-						</span>
-						<span class="instagram">
-							<i class="fa-brands fa-instagram"></i>
-						</span>
-					</div>
-				</div>
+          <div class="card-blog">
+            <div class="container-img-blog">
+              <img src="img/blog-2.jpg" alt="Imagen Blog 2" />
+            </div>
+            <div class="content-blog">
+              <h3>El viaje del grano: del campo a tu taza.</h3>
+              <p>
+                Como seleccionan los cafes de Brasil o Colombia.
+              </p>
+              <a href="#" class="btn-read-more">Leer más</a>
+            </div>
+          </div>
 
-				<div class="information">
-					<p class="title-footer">Información</p>
-					<ul>
-						<li><a href="#">Acerca de Nosotros</a></li>
-						<li><a href="#">Información Delivery</a></li>
-						<li><a href="#">Politicas de Privacidad</a></li>
-						<li><a href="#">Términos y condiciones</a></li>
-						<li><a href="#">Contactános</a></li>
-					</ul>
-				</div>
+          <div class="card-blog">
+            <div class="container-img-blog">
+              <img src="img/blog-3.jpg" alt="Imagen Blog 3" />
+            </div>
+            <div class="content-blog">
+              <h3>Diferencias entre café Arábica y Robusta.</h3>
+              <p>
+                Guia rapida para el cliente.
+              </p>
+              <a href="#" class="btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-				<div class="my-account">
-					<p class="title-footer">Mi cuenta</p>
-					<ul>
-						<li><a href="#">Mi cuenta</a></li>
+    <footer class="container-footer">
+      <div class="container footer">
+        <div class="contact">
+          <p class="title-footer">Información de Contacto</p>
+          <ul>
+            <li>Dirección: 05, Calle Principal, Mendoza, 5570, Argentina</li>
+            <li>Número de teléfono: 2634362734</li>
+            <li>Correo electrónico: caxambu@baristas.com</li>
+          </ul>
+          <div class="social-icons">
+            <span class="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </span>
+            <span class="twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </span>
+            <span class="youtube">
+              <i class="fa-brands fa-youtube"></i>
+            </span>
+            <span class="pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </span>
+            <span class="instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </span>
+          </div>
+        </div>
 
-						<li><a href="#">Historial de ordenes</a></li> 
+        <div class="information">
+          <p class="title-footer">Información</p>
+          <ul>
+            <li><a href="#">Acerca de Nosotros</a></li>
+            <li><a href="#">Información Delivery</a></li>
+            <li><a href="#">Politicas de Privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Contactános</a></li>
+          </ul>
+        </div>
 
-						<li><a href="#">Lista de deseos</a></li>
-						<li><a href="#">Boletín</a></li>
-					</ul>
-				</div>
+        <div class="my-account">
+          <p class="title-footer">Mi cuenta</p>
+          <ul>
+            <li><a href="#">Mi cuenta</a></li>
 
-				<div class="newsletter">
-					<p class="title-footer">Boletín informativo</p>
+            <li><a href="#">Historial de ordenes</a></li>
 
-					<div class="content">
-						<p>
-							Suscríbete a nuestros boletines ahora y mantente al
-							día con nuevas colecciones y ofertas exclusivas.
-						</p>
-						<input type="email" placeholder="Ingresa el correo aquí...">
-						<button>Suscríbete</button>
-					</div>
-				</div>
-			</div>
+            <li><a href="#">Lista de deseos</a></li>
+            <li><a href="#">Boletín</a></li>
+          </ul>
+        </div>
 
-			<div class="copyright">
-				<p>
-					Desarrollado por Programación nefasta &copy; 2024
-				</p>
-				<img src="img/payment.png" alt="Pagos" />
-			</div>
-		</footer>
-		<script src="/js/script.js"></script> 
-		<script src="/js/cliente.js"></script> 
-	</body>
+        <div class="newsletter">
+          <p class="title-footer">Boletín informativo</p>
+
+          <div class="content">
+            <p>
+              Suscríbete a nuestros boletines ahora y mantente al día con nuevas
+              colecciones y ofertas exclusivas.
+            </p>
+            <input type="email" placeholder="Ingresa el correo aquí..." />
+            <button>Suscríbete</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>Desarrollado por Programación nefasta &copy; 2024</p>
+        <img src="img/payment.png" alt="Pagos" />
+      </div>
+    </footer>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>
