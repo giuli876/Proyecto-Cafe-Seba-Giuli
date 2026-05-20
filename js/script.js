@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. VERIFICAR SI ESTÁ LOGEADO (TRUE o FALSE)
     // ==========================================
     const isUserLoggedIn = () => {
-        // Revisamos si existe el nombre del usuario guardado en la memoria
         return localStorage.getItem('userName') !== null;
     };
 
@@ -16,32 +15,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const navCart = document.getElementById('nav-cart');
     const navUserName = document.getElementById('nav-user-name');
     const dropName = document.getElementById('drop-name');
+    const dropEmail = document.getElementById('drop-email');
 
     if (isUserLoggedIn()) {
-        // --- LOGIN = TRUE ---
-        if (navLogin) navLogin.style.display = 'none'; // Ocultamos "Acceder"
+        if (navLogin) navLogin.style.display = 'none'; 
         
         if (navUser) {
-            navUser.style.display = 'block'; // Mostramos el menú desplegable
+            navUser.style.display = 'block'; 
             
-            // Sacamos el primer nombre para que no quede tan largo
             const nombreCompleto = localStorage.getItem('userName');
             const primerNombre = nombreCompleto ? nombreCompleto.split(' ')[0] : 'Usuario';
+            const userEmail = localStorage.getItem('userEmail');
             
             if (navUserName) navUserName.textContent = primerNombre;
             if (dropName) dropName.textContent = `Hola, ${primerNombre}`;
+            if (dropEmail && userEmail) dropEmail.textContent = userEmail;
+
+            const clientNameElement = document.getElementById('clientName');
+            if (clientNameElement) clientNameElement.textContent = primerNombre;
         }
         
-        // El carrito solo se muestra si el rol es 'cliente' (el vendedor no compra)
         if (navCart && localStorage.getItem('userRol') === 'cliente') {
             navCart.style.display = 'block';
         }
 
     } else {
         // --- LOGIN = FALSE ---
-        if (navLogin) navLogin.style.display = 'block'; // Dejamos "Acceder" visible
-        if (navUser) navUser.style.display = 'none';    // Ocultamos el perfil
-        if (navCart) navCart.style.display = 'none';    // Ocultamos el carrito
+        if (navLogin) navLogin.style.display = 'block'; 
+        if (navUser) navUser.style.display = 'none';    
+        if (navCart) navCart.style.display = 'none';    
     }
 
     // ==========================================
@@ -52,11 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (avatarBtn && dropdownMenu) {
         avatarBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita que se cierre al instante
-            dropdownMenu.classList.toggle('active'); // Abre y cierra el menú
+            e.stopPropagation(); 
+            dropdownMenu.classList.toggle('active'); 
         });
 
-        // Cierra el menú si tocás en cualquier otro lado de la pantalla
         document.addEventListener('click', (e) => {
             if (!dropdownMenu.contains(e.target) && !avatarBtn.contains(e.target)) {
                 dropdownMenu.classList.remove('active');
@@ -72,17 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         btnCerrarSesion.addEventListener('click', (e) => {
             e.preventDefault();
             
-            // Borramos los datos de la memoria
             localStorage.removeItem('userName');
             localStorage.removeItem('userRol');
-            localStorage.removeItem('userType'); // Por si quedó alguno viejo
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userType'); 
             
-            // Redirigimos al inicio
             window.location.href = 'index.html';
         });
     }
 
-    // (Opcional) Logo Caxambu lleva al inicio
     const logoContainer = document.querySelector('.container-logo');
     if (logoContainer) {
         logoContainer.style.cursor = 'pointer'; 
@@ -93,7 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Protección de rutas: si no está logeado y quiere entrar a cliente.html, lo manda al login
     const paginaActual = window.location.pathname.split('/').pop();
-    if (paginaActual === 'cliente.html' && !isUserLoggedIn()) {
+    const userRole = localStorage.getItem('userRol');
+
+    if (['cliente.html', 'perfil.html', 'vendedor.html'].includes(paginaActual) && !isUserLoggedIn()) {
         window.location.replace('login.html');
+        return;
+    }
+
+    if (paginaActual === 'cliente.html' && userRole === 'vendedor') {
+        window.location.replace('vendedor.html');
+        return;
+    }
+
+    if (paginaActual === 'vendedor.html' && userRole !== 'vendedor') {
+        window.location.replace('cliente.html');
+        return;
     }
 });

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .from('perfiles')
             .select('rol, nombre_completo')
             .eq('id', authData.user.id)
-            .single(); // Traemos solo una fila
+            .single(); 
 
         if (perfilError) {
             console.error("Error al obtener perfil:", perfilError.message);
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         localStorage.setItem('userName', perfilData.nombre_completo);
         localStorage.setItem('userRol', rolLimpio);
+        localStorage.setItem('userEmail', email);
 
         if (rolLimpio === 'vendedor') {
             window.location.href = 'vendedor.html';

@@ -1,107 +1,281 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Perfil - Caxambu</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/perfil.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-</head>
-<body>
-    <script type="module" src="/js/script.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <script type="module" src="js/script.js"></script>
     <header>
-        <div class="container-navbar">
-            <nav class="navbar container">
-                <div class="container-logo">
-                    <img src="img/Caligrafia-caxambu.png" alt="Logo Caxambu" />
-                </div>
-                <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="cliente.html">Tienda</a></li>
-                    <li><a href="soporte.html">Soporte</a></li>
-                    <li id="nav-cart" style="display: none;"><a href="#" id="cart-icon"><i class="fa-solid fa-cart-shopping"></i> <span class="cart-count">0</span></a></li>
-                    <li id="nav-login"><a href="login.html"><i class="fa-regular fa-user"></i> Acceder</a></li>
-                    <li id="nav-user" class="user-menu-container" style="display: none;">
-                        <div class="user-avatar-btn" id="avatar-btn">
-                            <i class="fa-regular fa-user"></i> <span id="nav-user-name">Mi Cuenta</span> <i class="fa-solid fa-chevron-down arrow-down"></i>
-                        </div>
-                        <ul class="dropdown-menu" id="dropdown-menu">
-                            <li class="dropdown-header">
-                                <span id="drop-name" class="drop-title">Hola, Cliente</span>
-                                <span id="drop-email" class="drop-subtitle">cliente@email.com</span>
-                            </li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a href="perfil.html"><i class="fa-regular fa-user"></i> Mi Perfil</a></li>
-                            <li><a href="cliente.html"><i class="fa-solid fa-bag-shopping"></i> Mis Compras</a></li>
-                            <li><a href="#"><i class="fa-regular fa-heart"></i> Favoritos</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a href="#" id="btn-cerrar-sesion" class="text-danger"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container-navbar">
+        <nav class="navbar container">
+          <div class="container-logo">
+            <img src="img/Caligrafia-caxambu.png" alt="Logo Caxambu" />
+          </div>
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cliente.html">Tienda</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li id="nav-cart" style="display: none">
+              <a href="#" id="cart-icon"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span></a
+              >
+            </li>
+            <li id="nav-login">
+              <a href="login.html"
+                ><i class="fa-regular fa-user"></i> Acceder</a
+              >
+            </li>
+            <li id="nav-user" class="user-menu-container" style="display: none">
+              <div class="user-avatar-btn" id="avatar-btn">
+                <i class="fa-regular fa-user"></i>
+                <span id="nav-user-name">Mi Cuenta</span>
+                <i class="fa-solid fa-chevron-down arrow-down"></i>
+              </div>
+              <ul class="dropdown-menu" id="dropdown-menu">
+                <li class="dropdown-header">
+                  <span id="drop-name" class="drop-title">Hola, Cliente</span>
+                  <span id="drop-email" class="drop-subtitle"
+                    >cliente@email.com</span
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a href="perfil.html"
+                    ><i class="fa-regular fa-user"></i> Mi Perfil</a
+                  >
+                </li>
+                <li>
+                  <a href="cliente.html"
+                    ><i class="fa-solid fa-bag-shopping"></i> Mis Compras</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fa-regular fa-heart"></i> Favoritos</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a href="#" id="btn-cerrar-sesion" class="text-danger"
+                    ><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar
+                    Sesión</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="main-perfil container">
-        <section class="perfil-header-card">
-            <div class="avatar-circle">
-                <i class="fa-regular fa-user"></i>
+      <section class="perfil-header-card">
+        <div class="avatar-circle">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="perfil-info-basica">
+          <h2 id="display-name">Cargando...</h2>
+          <p id="display-email">cargando@email.com</p>
+        </div>
+      </section>
+
+      <section class="perfil-grid">
+        <div class="perfil-col-left">
+          <div class="card-blanca" id="panel-datos">
+            <div class="card-title-row">
+              <h3>Datos personales</h3>
+              <button class="btn-modificar" id="btn-edit-perfil">
+                <i class="fa-solid fa-pen"></i> Modificar datos
+              </button>
             </div>
-            <div class="perfil-info-basica">
-                <h2 id="display-name">Cargando...</h2>
-                <p id="display-email">cargando@email.com</p>
-            </div>
-        </section>
 
-        <section class="perfil-grid">
-            <div class="perfil-col-left">
-                <div class="card-blanca">
-                    <div class="card-title-row">
-                        <h3>Datos personales</h3>
-                        <button class="btn-modificar" id="btn-edit-perfil">
-                            <i class="fa-solid fa-pen"></i> Modificar datos
-                        </button>
-                    </div>
-
-                    <div class="dato-row">
-                        <i class="fa-regular fa-user icon-dato"></i>
-                        <div class="dato-text">
-                            <span>Nombre completo</span>
-                            <p id="data-name">Cargando...</p>
-                        </div>
-                    </div>
-
-                    <div class="dato-row">
-                        <i class="fa-regular fa-envelope icon-dato"></i>
-                        <div class="dato-text">
-                            <span>Correo electrónico</span>
-                            <p id="data-email">Cargando...</p>
-                        </div>
-                    </div>
-
-                    <div class="dato-row border-none">
-                        <i class="fa-solid fa-location-dot icon-dato"></i>
-                        <div class="dato-text">
-                            <span>Dirección principal</span>
-                            <p id="data-address">San Martín, Mendoza, Argentina</p>
-                        </div>
-                    </div>
+            <div id="vista-datos-fijos">
+              <div class="dato-row">
+                <i class="fa-regular fa-user icon-dato"></i>
+                <div class="dato-text">
+                  <span>Nombre completo</span>
+                  <p id="data-name">Cargando...</p>
                 </div>
+              </div>
+
+              <div class="dato-row">
+                <i class="fa-regular fa-envelope icon-dato"></i>
+                <div class="dato-text">
+                  <span>Correo electrónico</span>
+                  <p id="data-email">Cargando...</p>
+                </div>
+              </div>
+
+              <div class="dato-row border-none">
+                <i class="fa-solid fa-location-dot icon-dato"></i>
+                <div class="dato-text">
+                  <span>Dirección principal</span>
+                  <p id="data-address">Aún no has configurado una dirección</p>
+                </div>
+              </div>
             </div>
 
-            <div class="perfil-col-right">
-                <div class="card-blanca menu-lateral">
-                    <h3>Configuración</h3>
-                    <a href="#"><span><i class="fa-solid fa-shield-halved"></i> Seguridad</span> <i class="fa-solid fa-chevron-right"></i></a>
-                    <a href="#"><span><i class="fa-regular fa-bell"></i> Notificaciones</span> <i class="fa-solid fa-chevron-right"></i></a>
-                    <a href="#"><span><i class="fa-solid fa-location-dot"></i> Mis direcciones</span> <i class="fa-solid fa-chevron-right"></i></a>
-                </div>
+            <div
+              id="formulario-edicion"
+              style="display: none; padding-top: 20px"
+            >
+              <div style="margin-bottom: 15px">
+                <label style="display: block; font-size: 0.9em; color: #666"
+                  >Nombre completo</label
+                >
+                <input
+                  type="text"
+                  id="input-edit-name"
+                  style="
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    margin-top: 5px;
+                  "
+                />
+              </div>
+              <div style="margin-bottom: 15px">
+                <label style="display: block; font-size: 0.9em; color: #666"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  id="input-edit-email"
+                  disabled
+                  title="El correo no se puede cambiar por aquí"
+                  style="
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    margin-top: 5px;
+                    background-color: #f5f5f5;
+                  "
+                />
+              </div>
+              <div style="display: flex; gap: 10px; margin-top: 20px">
+                <button
+                  id="btn-guardar-perfil"
+                  style="
+                    padding: 8px 15px;
+                    background-color: #4a3b32;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  Guardar
+                </button>
+                <button
+                  id="btn-cancelar-perfil"
+                  style="
+                    padding: 8px 15px;
+                    background-color: #ccc;
+                    color: #333;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  Cancelar
+                </button>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <div class="card-blanca" id="panel-seguridad" style="display: none">
+            <div class="card-title-row" style="margin-bottom: 20px">
+              <h3>Seguridad de la cuenta</h3>
+            </div>
+
+            <div>
+                <h4 style="margin-bottom: 10px; font-weight: 600;">Cambiar contraseña</h4>
+                <input type="password" id="input-pass-nueva" placeholder="Nueva contraseña (mínimo 6 caracteres)" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                <input type="password" id="input-pass-repetir" placeholder="Repetir nueva contraseña" style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+                <button id="btn-actualizar-pass" style="padding: 8px 15px; background-color: #4a3b32; color: white; border: none; border-radius: 4px; cursor: pointer;">Actualizar contraseña</button>
+            </div>
+
+            <hr style="margin: 25px 0; border: 0; border-top: 1px solid #eee" />
+
+            <div>
+              <h4 style="color: #d9534f; margin-bottom: 5px">
+                Zona de peligro
+              </h4>
+              <p style="font-size: 0.85em; color: #666; margin-bottom: 15px">
+                Una vez que elimines tu cuenta, no hay vuelta atrás.
+              </p>
+              <button
+                style="
+                  padding: 8px 15px;
+                  background-color: #d9534f;
+                  color: white;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                "
+              >
+                Eliminar cuenta
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="card-blanca"
+            id="panel-notificaciones"
+            style="display: none"
+          >
+            <div class="card-title-row">
+              <h3>Notificaciones</h3>
+            </div>
+            <p style="text-align: center; color: #888; padding: 40px 0">
+              No tienes notificaciones nuevas en este momento.
+            </p>
+          </div>
+          <div class="card-blanca" id="panel-direcciones" style="display: none">
+            <div class="card-title-row">
+              <h3>Mis direcciones</h3>
+            </div>
+            <p style="text-align: center; color: #888; padding: 40px 0">
+              Aún no tienes direcciones de envío configuradas.
+            </p>
+          </div>
+        </div>
+
+        <div class="perfil-col-right">
+          <div class="card-blanca menu-lateral">
+            <h3>Configuración</h3>
+            <a href="#" id="menu-datos"
+              ><span><i class="fa-regular fa-user"></i> Mis datos</span>
+              <i class="fa-solid fa-chevron-right"></i
+            ></a>
+            <a href="#" id="menu-seguridad"
+              ><span><i class="fa-solid fa-shield-halved"></i> Seguridad</span>
+              <i class="fa-solid fa-chevron-right"></i
+            ></a>
+            <a href="#" id="menu-notificaciones"
+              ><span><i class="fa-regular fa-bell"></i> Notificaciones</span>
+              <i class="fa-solid fa-chevron-right"></i
+            ></a>
+            <a href="#" id="menu-direcciones"
+              ><span
+                ><i class="fa-solid fa-location-dot"></i> Mis direcciones</span
+              >
+              <i class="fa-solid fa-chevron-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <script type="module" src="/js/perfil.js"></script>
-</body>
+    <script type="module" src="js/perfil.js"></script>
+  </body>
 </html>

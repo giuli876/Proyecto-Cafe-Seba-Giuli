@@ -8,8 +8,8 @@
 		content="width=device-width, initial-scale=1.0"
 	/>
 	<title>Mi Cuenta - Caxambu</title>
-	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/cliente.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/cliente.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
 <body>
 	<header>
@@ -25,7 +25,7 @@
             <li><a href="soporte.html">Soporte</a></li>
 
             <li id="nav-cart" style="display: none">
-              <a href="#" id="cart-icon"
+              <a href="#section-cart" id="cart-icon"
                 ><i class="fa-solid fa-cart-shopping"></i>
                 <span class="cart-count">0</span></a
               >
@@ -58,12 +58,12 @@
                   >
                 </li>
                 <li>
-                  <a href="cliente.html"
+                  <a href="#section-historial"
                     ><i class="fa-solid fa-bag-shopping"></i> Mis Compras</a
                   >
                 </li>
                 <li>
-                  <a href="#"><i class="fa-regular fa-heart"></i> Favoritos</a>
+                  <a href="#" onclick="alert('Funcionalidad de Favoritos próximamente...'); return false;"><i class="fa-regular fa-heart"></i> Favoritos</a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
@@ -91,7 +91,7 @@
                     
                     <div class="card-product" data-product-id="prod-1" data-price="34360">
                         <div class="container-img">
-                            <img src="/img/cafe-2.png" alt="Caxmbu Brasilero" />
+                            <img src="img/cafe-2.png" alt="Caxmbu Brasilero" />
                         </div>
                         <div class="content-card-product">
                             <h3>Caxmbu Brasilero</h3>
@@ -112,7 +112,7 @@
                     
                     <div class="card-product" data-product-id="prod-2" data-price="42570">
                         <div class="container-img">
-                            <img src="/img/cafe-2.png" alt="Caxambu Colombiano" />
+                            <img src="img/cafe-2.png" alt="Caxambu Colombiano" />
                         </div>
                         <div class="content-card-product">
                             <h3>Caxambu Colombiano</h3>
@@ -133,7 +133,7 @@
 
                     <div class="card-product" data-product-id="prod-3" data-price="31300">
                         <div class="container-img">
-                            <img src="/img/cafe-viena.jpg" alt="Flor de Brasil Doble-Crema" />
+                            <img src="img/cafe-viena.jpg" alt="Flor de Brasil Doble-Crema" />
                         </div>
                         <div class="content-card-product">
                             <h3>Flor de Brasil Doble-Crema</h3>
@@ -154,7 +154,7 @@
                     
                     <div class="card-product" data-product-id="prod-4" data-price="29900">
                         <div class="container-img">
-                            <img src="/img/cafe-viena.jpg" alt="Flor de Brasil 85/15" />
+                            <img src="img/cafe-viena.jpg" alt="Flor de Brasil 85/15" />
                         </div>
                         <div class="content-card-product">
                             <h3>Flor de Brasil 85/15</h3>
@@ -175,7 +175,7 @@
 
                     <div class="card-product" data-product-id="prod-5" data-price="15750">
                         <div class="container-img">
-                            <img src="/img/Caja-Azucar.png" alt="Azucar 800 sobres" />
+                            <img src="img/Caja-Azucar.png" alt="Azucar 800 sobres" />
                         </div>
                         <div class="content-card-product">
                             <h3>Azucar 800 sobres</h3>
@@ -196,7 +196,7 @@
 
                     <div class="card-product" data-product-id="prod-6" data-price="8600">
                         <div class="container-img">
-                            <img src="/img/Caja-Edulco.png" alt="Edulco 300 sobre" />
+                            <img src="img/Caja-Edulco.png" alt="Edulco 300 sobre" />
                         </div>
                         <div class="content-card-product">
                             <h3>Edulco 300 sobre</h3>
@@ -218,7 +218,7 @@
                 </div>
             </section>
             
-            <section class="client-section remito-section">
+            <section class="client-section remito-section" id="section-cart">
                 <h3 class="section-title">Tu Carrito de Compras</h3>
                 <p>Confirma los productos y cantidades antes de finalizar el pedido.</p>
 
@@ -252,7 +252,7 @@
                     </div>
                 </div>
             </section>	
-			<section class="client-section">
+			<section class="client-section" id="section-historial">
 				<h3 class="section-title">Historial de Pedidos</h3>
 				<ul class="orders-list" id="listaHistorial">
     </ul>
@@ -345,7 +345,7 @@
         </div>
 </div>
 
-		<script type="module" src="/js/script.js"></script>
-		<script src="/js/cliente.js"></script>
+		<script type="module" src="js/script.js"></script>
+		<script src="js/cliente.js"></script>
 </body>
 </html>

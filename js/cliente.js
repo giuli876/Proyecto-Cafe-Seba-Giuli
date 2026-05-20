@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const removeFromCart = (event) => {
-        // Buscamos el botón, incluso si el click fue en el ícono <i>
         const button = event.currentTarget; 
         const productId = button.dataset.productId;
         
