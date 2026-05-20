@@ -210,4 +210,52 @@ document.addEventListener('DOMContentLoaded', async () => {
             btnActualizarPass.disabled = false;
         });
     }
+    // --- 5. LÓGICA PARA ELIMINAR CUENTA (ZONA DE PELIGRO) ---
+    const btnEliminarCuenta = document.getElementById('btn-eliminar-cuenta');
+
+    if (btnEliminarCuenta) {
+        btnEliminarCuenta.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            // 1. Pedimos doble confirmación (es una acción destructiva)
+            const confirmacion1 = confirm("⚠️ ¿Estás seguro de que quieres eliminar tu cuenta?");
+            if (!confirmacion1) return;
+
+            const confirmacion2 = confirm("🚨 ¡ÚLTIMO AVISO! Esta acción no se puede deshacer. ¿Borrar cuenta definitivamente?");
+            if (!confirmacion2) return;
+
+            // Cambiamos el botón a estado de carga
+            btnEliminarCuenta.textContent = 'Eliminando...';
+            btnEliminarCuenta.disabled = true;
+
+            try {
+                // 2. Llamamos a la función mágica que creamos en Supabase SQL Editor
+                const { error } = await supabase.rpc('eliminar_mi_cuenta');
+
+                if (error) {
+                    console.error("Error al eliminar cuenta:", error);
+                    alert("No se pudo eliminar la cuenta. Verifica que no tengas pedidos pendientes.");
+                    btnEliminarCuenta.textContent = 'Eliminar cuenta';
+                    btnEliminarCuenta.disabled = false;
+                    return;
+                }
+
+                // 3. Si se borró de la BD, cerramos su sesión en el navegador
+                await supabase.auth.signOut();
+                
+                // 4. Limpiamos el localStorage
+                localStorage.clear();
+
+                // 5. Lo mandamos al inicio
+                alert("Tu cuenta ha sido eliminada. ¡Lamentamos verte partir!");
+                window.location.href = 'index.html';
+
+            } catch (err) {
+                console.error("Error inesperado:", err);
+                alert("Ocurrió un error inesperado.");
+                btnEliminarCuenta.textContent = 'Eliminar cuenta';
+                btnEliminarCuenta.disabled = false;
+            }
+        });
+    }
 });
