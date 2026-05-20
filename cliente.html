@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1.0"
-	/>
-	<title>Mi Cuenta - Caxambu</title>
-	<link rel="stylesheet" href="css/styles.css" />
-	<link rel="stylesheet" href="css/cliente.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+    <script type="module" src="./js/auth-check.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Cuenta - Caxambu</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/cliente.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 <body>
-	<header>
+    <header>
         <div class="container-navbar">
         <nav class="navbar container">
           <div class="container-logo">
@@ -77,143 +76,17 @@
           </ul>
         </nav>
       </div>
-	</header>
+    </header>
 
-	<main class="main-content client-page">
-		<div class="container client-dashboard">
-			<h2 class="heading-1">¡Bienvenido, <span id="clientName">Cliente</span>!</h2>
-			<p class="welcome-message">Aquí puedes gestionar tu cuenta, ver el historial de pedidos y encontrar productos recomendados.</p>
-			<section class="client-section">
+    <main class="main-content client-page">
+        <div class="container client-dashboard">
+            <h2 class="heading-1">¡Bienvenido, <span id="clientName">Cliente</span>!</h2>
+            <p class="welcome-message">Aquí puedes gestionar tu cuenta, ver el historial de pedidos y encontrar productos recomendados.</p>
+            
+            <section class="client-section">
                 <h3 class="section-title">Hacer un Nuevo Pedido</h3>
-                
-                <div class="container-products remito-catalogo">
-                    
-                    <div class="card-product" data-product-id="prod-1" data-price="34360">
-                        <div class="container-img">
-                            <img src="img/cafe-2.png" alt="Caxmbu Brasilero" />
-                        </div>
-                        <div class="content-card-product">
-                            <h3>Caxmbu Brasilero</h3>
-                            <p class="price">
-                                $34.360
-                            </p>
-                            <div class="product-action-group">
-                                <div class="quantity-control">
-                                    <label for="qty-prod-1">Cant:</label>
-                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-1">
-                                </div>
-                                <button class="btn-primary-add-catalogo" data-product-id="prod-1" data-product-name="Caxmbu Brasilero">
-                                    <i class="fa-solid fa-cart-plus"></i> Añadir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card-product" data-product-id="prod-2" data-price="42570">
-                        <div class="container-img">
-                            <img src="img/cafe-2.png" alt="Caxambu Colombiano" />
-                        </div>
-                        <div class="content-card-product">
-                            <h3>Caxambu Colombiano</h3>
-                            <p class="price">
-                                $42.570
-                            </p>
-                            <div class="product-action-group">
-                                <div class="quantity-control">
-                                    <label for="qty-prod-2">Cant:</label>
-                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-2">
-                                </div>
-                                <button class="btn-primary-add-catalogo" data-product-id="prod-2" data-product-name="Caxambu Colombiano">
-                                    <i class="fa-solid fa-cart-plus"></i> Añadir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="card-product" data-product-id="prod-3" data-price="31300">
-                        <div class="container-img">
-                            <img src="img/cafe-viena.jpg" alt="Flor de Brasil Doble-Crema" />
-                        </div>
-                        <div class="content-card-product">
-                            <h3>Flor de Brasil Doble-Crema</h3>
-                            <p class="price">
-                                $31.300
-                            </p>
-                            <div class="product-action-group">
-                                <div class="quantity-control">
-                                    <label for="qty-prod-3">Cant:</label>
-                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-3">
-                                </div>
-                                <button class="btn-primary-add-catalogo" data-product-id="prod-3" data-product-name="Flor de Brasil Doble-Crema">
-                                    <i class="fa-solid fa-cart-plus"></i> Añadir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card-product" data-product-id="prod-4" data-price="29900">
-                        <div class="container-img">
-                            <img src="img/cafe-viena.jpg" alt="Flor de Brasil 85/15" />
-                        </div>
-                        <div class="content-card-product">
-                            <h3>Flor de Brasil 85/15</h3>
-                            <p class="price">
-                                $29.900
-                            </p>
-                            <div class="product-action-group">
-                                <div class="quantity-control">
-                                    <label for="qty-prod-4">Cant:</label>
-                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-4">
-                                </div>
-                                <button class="btn-primary-add-catalogo" data-product-id="prod-4" data-product-name="Flor de Brasil 85/15">
-                                    <i class="fa-solid fa-cart-plus"></i> Añadir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-product" data-product-id="prod-5" data-price="15750">
-                        <div class="container-img">
-                            <img src="img/Caja-Azucar.png" alt="Azucar 800 sobres" />
-                        </div>
-                        <div class="content-card-product">
-                            <h3>Azucar 800 sobres</h3>
-                            <p class="price">
-                                $15.750
-                            </p>
-                            <div class="product-action-group">
-                                <div class="quantity-control">
-                                    <label for="qty-prod-5">Cant:</label>
-                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-5">
-                                </div>
-                                <button class="btn-primary-add-catalogo" data-product-id="prod-5" data-product-name="Azucar 800 sobres">
-                                    <i class="fa-solid fa-cart-plus"></i> Añadir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-product" data-product-id="prod-6" data-price="8600">
-                        <div class="container-img">
-                            <img src="img/Caja-Edulco.png" alt="Edulco 300 sobre" />
-                        </div>
-                        <div class="content-card-product">
-                            <h3>Edulco 300 sobre</h3>
-                            <p class="price">
-                                $8.600
-                            </p>
-                            <div class="product-action-group">
-                                <div class="quantity-control">
-                                    <label for="qty-prod-6">Cant:</label>
-                                    <input type="number" value="1" min="1" class="catalogo-qty-input" id="qty-prod-6">
-                                </div>
-                                <button class="btn-primary-add-catalogo" data-product-id="prod-6" data-product-name="Edulco 300 sobre">
-                                    <i class="fa-solid fa-cart-plus"></i> Añadir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="container-products remito-catalogo" id="catalogo-productos">
                 </div>
             </section>
             
@@ -235,7 +108,7 @@
                                 </tr>
                             </thead>
                             <tbody id="remitoBody">
-                                </tbody>
+                            </tbody>
                         </table>
                     </div>
 
@@ -248,16 +121,18 @@
                         </button>
                     </div>
                 </div>
-            </section>	
-			<section class="client-section" id="section-historial">
-				<h3 class="section-title">Historial de Pedidos</h3>
-				<ul class="orders-list" id="listaHistorial">
-    </ul>
-<p id="noOrdersMessage" style="display: none;">Aún no tienes pedidos. ¡Explora nuestros productos!</p>
-</section>
-		</div>
-	</main>
-<footer class="container-footer">
+            </section>  
+
+            <section class="client-section" id="section-historial">
+                <h3 class="section-title">Historial de Pedidos</h3>
+                <ul class="orders-list" id="listaHistorial">
+                </ul>
+                <p id="noOrdersMessage" style="display: none;">Aún no tienes pedidos. ¡Explora nuestros productos!</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="container-footer">
       <div class="container footer">
         <div class="contact">
           <p class="title-footer">Información de Contacto</p>
@@ -300,9 +175,7 @@
           <p class="title-footer">Mi cuenta</p>
           <ul>
             <li><a href="#">Mi cuenta</a></li>
-
             <li><a href="#">Historial de ordenes</a></li>
-
             <li><a href="#">Lista de deseos</a></li>
             <li><a href="#">Boletín</a></li>
           </ul>
@@ -328,7 +201,7 @@
       </div>
     </footer>
 
-<div id="modalDetallePedido" class="modal-overlay" style="display: none;">
+    <div id="modalDetallePedido" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitulo">Pedido #00000</h3>
@@ -340,9 +213,9 @@
                 <button class="btn-close-modal">Cerrar</button>
             </div>
         </div>
-</div>
+    </div>
 
-		<script type="module" src="js/script.js"></script>
-		<script src="js/cliente.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/cliente.js"></script>
 </body>
 </html>
