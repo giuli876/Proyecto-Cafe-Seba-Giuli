@@ -267,22 +267,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.estado === 'Rechazado') colorEstado = 'var(--danger-color)';
                 
                 const li = document.createElement('li');
-                li.style.display = 'flex';
-                li.style.justifyContent = 'space-between';
-                li.style.alignItems = 'center';
+                li.className = 'order-item';
 
                 li.innerHTML = `
-                    <div>
-                        <strong>Pedido #${p.id}</strong> - Fecha: ${p.fecha} <br>
-                        <small>Estado: <span style="color: ${colorEstado}; font-weight: bold;">${p.estado}</span></small>
-                    </div>
-                    <div style="text-align: right;">
-                        <span style="display:block; font-weight:bold; margin-bottom: 5px;">$${p.total.toLocaleString('es-AR')}</span>
-                        <button class="btn-ver-detalle" onclick="abrirModalDetalle(${p.id})">
-                            <i class="fa-solid fa-eye"></i> Ver
-                        </button>
-                    </div>
-                `;
+                <div class="order-info">
+                    <strong>Pedido #${p.id}</strong> - Fecha: ${p.fecha} <br>
+                    <small>Estado: <span style="color: ${colorEstado}; font-weight: bold;">${p.estado}</span></small>
+                </div>
+                <div class="order-total-container">
+                    <span class="order-total">$${p.total.toLocaleString('es-AR')}</span>
+                    <button class="btn-view-order" onclick="abrirModalDetalle(${p.id})">
+                        <i class="fa-solid fa-eye"></i> Ver
+                    </button>
+                </div>`;
                 historialContainer.appendChild(li);
             });
         }
